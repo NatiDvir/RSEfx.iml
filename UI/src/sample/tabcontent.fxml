@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+    <children>
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+            <children>
+                <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                    <children>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="My stock list:">
+                            <font>
+                                <Font size="30.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+                <ListView fx:id="holdingsLV" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="388.0" prefWidth="397.0" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </VBox.margin>
+                </ListView>
+                <HBox>
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </VBox.margin>
+                    <children>
+                        <Button mnemonicParsing="false" text="Make a trade!" onAction="#onTradeButtonClicked">
+                            <padding>
+                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                            </padding>
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Button>
+                        <VBox>
+                            <children>
+                                <HBox prefWidth="200.0">
+                                    <children>
+                                        <Label text="Name:">
+                                            <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                        <Label fx:id="clientName" text="myName">
+                                            <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <HBox prefWidth="200.0">
+                                    <children>
+                                        <Label text="Overall stocks value:">
+                                            <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                        <Label fx:id="holdingsWorth" text="xxxxx">
+                                            <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" top="5.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                        <Label text="\$">
+                                            <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</HBox>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TabContentController">
+   <center>
+      <GridPane maxHeight="-Infinity" minHeight="400.0" prefWidth="600.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="128.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="351.0" minHeight="10.0" prefHeight="227.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="288.0" minHeight="67.0" prefHeight="240.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <VBox minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2">
+               <children>
+                  <Label maxWidth="1.7976931348623157E308" text="Trade:" textAlignment="CENTER" underline="true">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="symbolTB" disable="true" editable="false" promptText="Symbol" text="Choose From lists">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <HBox maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefWidth="200.0">
+                     <children>
+                        <RadioButton fx:id="buyTS" mnemonicParsing="false" text="Buy">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="buySell" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="sellTS" mnemonicParsing="false" text="Sell" textAlignment="CENTER" toggleGroup="$buySell" wrapText="true">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+                  <TextField fx:id="amountTB" promptText="Amount">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="27.0" prefWidth="167.0">
+                     <children>
+                        <TextField fx:id="priceTB" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="253.0" promptText="Price">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <CheckBox fx:id="mktCB" minWidth="60.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="60.0" text="MKT">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                     </children>
+                  </HBox>
+
+                  <Button onAction="#executeTradeBtnClicked" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" text="Execute" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <ListView fx:id="holdingsLV" prefHeight="261.0" prefWidth="290.0" GridPane.rowIndex="1" GridPane.rowSpan="2">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </ListView>
+            <VBox minWidth="150.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Label text="About this User:" underline="true">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+
+                     </VBox.margin>
+                  </Label>
+
+                  <HBox prefWidth="200.0">
+                     <children>
+                        <Label text="Name:">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="clientName" text="myName">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefWidth="200.0">
+                     <children>
+                        <Label text="Overall stocks value:">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="holdingsWorth" text="xxxxx">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label text="\$">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

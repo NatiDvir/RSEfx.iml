@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="10.0" minWidth="10.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar VBox.vgrow="ALWAYS">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox spacing="20.0">
+               <children>
+                  <Region prefHeight="25.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="loadFileBtn" mnemonicParsing="false" onAction="#onLoadFileClicked" prefHeight="25.0" prefWidth="123.0" text="Load XML file:" />
+                  <ProgressBar fx:id="taskPB" prefHeight="25.0" prefWidth="388.0" progress="0.0" />
+                  <Button fx:id="clearFileBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Clear" />
+                  <Region layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <ScrollPane fx:id="mySP" fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="TOP_LEFT">
+         <content>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="300.0" minWidth="500.0">
+               <children>
+                  <TabPane fx:id="myTabs" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                     <tabs>
+
+                     </tabs>
+                  </TabPane>
+                  <VBox HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox>
+                           <children>
+                              <Label text="All stocks list:">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="32.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox VBox.vgrow="ALWAYS">
+                           <children>
+                              <ListView fx:id="allStocksLV" maxWidth="1.7976931348623157E308" prefHeight="215.0" prefWidth="383.0" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </ListView>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#onShowHistoryClicked" text="Show History!">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Label fx:id="historyErrorLbl" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Label" textAlignment="CENTER" textFill="#d32323" visible="false" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
